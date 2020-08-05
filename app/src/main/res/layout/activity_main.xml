@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            >
+
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/barCardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_6"
+                android:layout_marginRight="@dimen/margin_6">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="@dimen/margin_6">
+
+
+                    <androidx.viewpager.widget.ViewPager
+                        android:id="@+id/photos_viewpager"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp" />
+
+                    <LinearLayout
+                        android:id="@+id/layout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="@dimen/margin_6"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/marketingCard"
+                android:layout_width="190dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/barCardView"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginRight="@dimen/margin_6"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/margin_6"
+                    android:paddingBottom="@dimen/margin_16">
+
+                    <TextView
+                        android:id="@+id/marktetingText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_12"
+                        android:text="Marketing"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/marktetingValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:text="123.4M"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/conversionCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/barCardView"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginRight="@dimen/margin_6"
+                android:layout_toRightOf="@id/marketingCard"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_6"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/conversionText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_12"
+                        android:text="Conversion"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/conversionValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:text="537"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/targetPercent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+22%"
+                            android:textColor="#55FD44" />
+
+                        <TextView
+                            android:id="@+id/targetText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" of target" />
+
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.BarChart
+                        android:id="@+id/barChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_6"
+                        android:layout_marginRight="@dimen/margin_12"
+                        android:layout_marginBottom="@dimen/margin_6" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/impressionCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/marketingCard"
+                android:layout_toLeftOf="@+id/conversionCard"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginRight="@dimen/margin_6"
+                android:layout_weight="1">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/margin_6"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/impressionText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_12"
+                        android:text="Impressions"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/impresssionValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:text="123.4M"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/impressionPercent"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="+12.3%"
+                            android:textColor="#55FD44" />
+
+                        <TextView
+                            android:id="@+id/impressionTargetText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text=" of target" />
+
+                    </LinearLayout>
+
+                    <com.github.mikephil.charting.charts.LineChart
+                        android:id="@+id/impressionLineChart"
+                        android:layout_width="match_parent"
+                        android:layout_height="80dp"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_6"
+                        android:layout_marginRight="@dimen/margin_12"
+                        android:layout_marginBottom="@dimen/margin_6" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/salesCard"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/conversionCard"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginRight="@dimen/margin_6"
+                android:layout_toRightOf="@id/impressionCard"
+                android:layout_weight="1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="@dimen/margin_6"
+                    android:paddingBottom="@dimen/margin_16">
+
+                    <TextView
+                        android:id="@+id/salesText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_12"
+                        android:text="Sales"
+                        android:textSize="16sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/salesValue"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/margin_12"
+                        android:layout_marginTop="@dimen/margin_4"
+                        android:text="345.8M"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
+
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/bottomCardViewsLayout"
+                android:layout_below="@id/impressionCard"
+                android:orientation="horizontal"
+                android:weightSum="2"
+                android:layout_marginLeft="@dimen/margin_6"
+                android:layout_marginTop="@dimen/margin_12"
+                android:layout_marginRight="@dimen/margin_6"
+                android:paddingBottom="@dimen/margin_6"
+                >
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/designCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/margin_6"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:elevation="@dimen/margin_4"
+                    app:cardBackgroundColor="@color/active_color">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_6"
+                        android:paddingBottom="@dimen/margin_16">
+
+                        <TextView
+                            android:id="@+id/designText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="@dimen/margin_12"
+                            android:text="Design"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+
+                        <TextView
+                            android:id="@+id/designValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:text="345.8M"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+
+
+                        <TextView
+                            android:id="@+id/averageDesignValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:text="+16.3K (+122.8%)"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/white"/>
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/clicksCard"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_6"
+                    android:layout_marginBottom="@dimen/margin_6"
+                    android:layout_weight="1"
+                    android:elevation="@dimen/margin_4"
+                    app:cardBackgroundColor="@color/active_color">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingLeft="@dimen/margin_6"
+                        android:paddingBottom="@dimen/margin_16">
+
+                        <TextView
+                            android:id="@+id/clicksText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="@dimen/margin_12"
+                            android:text="Clicks"
+                            android:textSize="16sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+
+                        <TextView
+                            android:id="@+id/clicksValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:text="30.7K"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:textColor="@android:color/white"/>
+
+                        <TextView
+                            android:id="@+id/averageValue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/margin_12"
+                            android:layout_marginTop="@dimen/margin_4"
+                            android:text="+16.3K (+122.8%)"
+                            android:textSize="14sp"
+                            android:textColor="@android:color/white"/>
+
+
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+
+
+</RelativeLayout>
